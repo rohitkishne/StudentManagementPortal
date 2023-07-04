@@ -45,9 +45,8 @@ function displayData() {
                                         <button id="update-student" class="update-student" onclick="update('${index}')"><i class="fa-regular fa-pen-to-square" style="color: #ffffff;"></i></button>
                                         <button id="delete-student" class="delete-student" onclick="deleteStudent('${index}')"><i class="fa-solid fa-trash-can" style="color: #ffffff;"></i></button>
                                     </td>
-                                    
                                 </tr>  
-                                    `
+                                `
     });
 }
 
