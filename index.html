@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Student Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+<div class="main-container">
+    <div class="heading">
+        <h1>Student Management CRUD</h1>
+    </div>
+
+    <section class="add-student">
+        <form id="student-form" action="" class="student-form" method="post">
+            <input type="text" name="name" id="name" placeholder="Name" required>
+            <input type="email" name="email" id="email" placeholder="Email" required>
+            <input type="text" name="gpa" id="gpa" placeholder="GPA" required>
+            <input type="text" name="age" id="age" placeholder="Age" required>
+            <input type="text" name="degree" id="degree" placeholder="Degree" required>
+            <button id="add-student" class="add-student-btn" type="submit">Add Student</button>
+            <button class="add-student-btn" id="update-btn" type="submit">Update</button>
+        </form>
+    </section>
+    <section class="display-student-search">
+        <div class="search-student">
+            <input type="text" name="search" id="search" class="search" placeholder="Search By Name, email or degree">
+        </div>
+        <div class="student-table">
+            <table class="student-data">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Student Name</th>
+                        <th>Email</th>
+                        <th>Age</th>
+                        <th>GPA</th>
+                        <th>Degree</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="student-data-body" class="student-data-body">
+                    <!-- <tr>
+                        <td>${index+1}</td>
+                        <td>${student.name}</td>
+                        <td>${student.email}</td>
+                        <td>${student.age}</td>
+                        <td>${student.gpa}</td>
+                        <td>${student.degree}</td>
+                        <td>
+                            <button class="update-student"><i class="fa-regular fa-pen-to-square" style="color: #ffffff;"></i></button>
+                            <button class="delete-student"><i class="fa-solid fa-trash-can" style="color: #ffffff;"></i></button>
+                        </td>
+                        
+                    </tr>                  -->
+                </tbody>
+            </table>
+        </div>
+    </section>
+</div>    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" integrity="sha512-fD9DI5bZwQxOi7MhYWnnNPlvXdp/2Pj3XSTRrFs5FQa4mizyGLnJcN6tuvUS6LbmgN1ut+XGSABKvjN0H6Aoow==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./index.js"></script>
+</body>
+</html>

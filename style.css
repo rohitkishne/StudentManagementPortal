@@ -1,0 +1,122 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+}
+
+.main-container{
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    min-height: 120vh;
+    padding: 50px 0px;
+}
+.heading{
+    margin-bottom: 20px;
+    width: 75%;
+    display: flex;
+}
+
+.add-student{
+    width: 100%;
+    height: 30vh;
+    display: flex;
+    justify-content: center;
+}
+
+.student-form{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 35px;
+    width: 74%;
+}
+
+.student-form > input{
+    width: 17rem;
+    height: 3em;
+    padding: 5px;
+    outline: none;
+    border: 1px solid #ffffff47;
+    background-color: black;
+}
+
+.student-form > .add-student-btn{
+    width: 40%;
+    height: 3em;
+    color: black;
+    font-weight: 700;
+    border-radius: 2px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+
+.display-student-search{
+    padding: 20px 0px;
+    width: 100%;
+    min-height: 428px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.search-student{
+    width: 75%;
+    height: 3em;
+}
+
+.search-student .search{
+    width: 100%;
+    height: 3em;
+    border: 1px solid #ffffff47;
+    outline: none;
+    background-color: black;
+    padding: 10px;
+    border-radius:2px;
+}
+
+.student-table{
+    width: 75%;
+    min-height: 15em;
+    border: 1px solid #ffffff47;
+}
+
+.student-data{
+    width: 100%;
+    text-align: center;
+    min-height: 5em;
+}
+
+table, th, td{
+    border: 1px solid #ffffff47; 
+    border-collapse: collapse;
+}
+
+.student-data > thead{
+    height: 2.5em;
+}
+
+tbody tr{
+    height: 2.8em;
+}
+
+.update-student, .delete-student{
+    width: 2em;
+    background: black;
+    outline: none;
+    border: none;
+    height: 2em;
+    cursor: pointer;
+}
+
+#update-btn{
+    display: none;
+}
+
