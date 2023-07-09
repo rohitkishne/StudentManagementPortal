@@ -1,8 +1,11 @@
 const formData = document.getElementById("student-form")
 const studentDisply = document.getElementById("student-data-body")
 const sortStudent = document.getElementById("search")
-
+const addStudent = document.getElementById("add-student");
 let studentData = [];
+
+let editIndex = -1;
+let isEditMode = false;
 
 formData.addEventListener("submit", function(event) {
 
@@ -22,7 +25,15 @@ formData.addEventListener("submit", function(event) {
         degree : degree
     }
 
-    studentData.push(data);
+
+    if (isEditMode) {
+        studentData[editIndex] = data;
+        isEditMode = false;
+        addStudent.textContent = 'Add Student';
+    }
+    else{
+          studentData.push(data);
+    }
 
     displayData();
 
@@ -57,24 +68,31 @@ function deleteStudent(index) {
     displayData();
 }
 
-const updateStudentBtn = document.getElementById("update-btn");
-const addStudent = document.getElementById("add-student");
+// const updateStudentBtn = document.getElementById("update-btn");
+// const addStudent = document.getElementById("add-student");
 
-function openUpdateButton() {
-    updateStudentBtn.style.display = 'block'
-    addStudent.style.display = 'none'
+// function openUpdateButton() {
+//     updateStudentBtn.style.display = 'block'
+//     addStudent.style.display = 'none'
 
-}
-function closeUpdateBtn() {
-    updateStudentBtn.style.display = 'none'
-    addStudent.style.display = 'block'
-    formData.reset();
+// }
+// function closeUpdateBtn() {
+//     updateStudentBtn.style.display = 'none'
+//     addStudent.style.display = 'block'
+//     formData.reset();
 
-}
+// }
 
- 
+
 function update(index) {
-    openUpdateButton();
+    // event.preventDefault();
+    // openUpdateButton();
+
+    isEditMode = true;
+    editIndex = index;
+
+    addStudent.textContent = 'Update Student';
+
     let updateStudent = studentData[index];
 
     let name = document.getElementById("name");
@@ -89,23 +107,28 @@ function update(index) {
     age.value = updateStudent.age;
     degree.value = updateStudent.degree;
 
-    function updateStudentHandler(event) {
-        event.preventDefault();
-        updateStudent = {
-            name: name.value,
-            email: email.value,
-            gpa: gpa.value,
-            age: age.value,
-            degree: degree.value
-        }
-        studentData[index] = updateStudent;
-        displayData();
-        closeUpdateBtn();
-        
-    }
+    // function updateStudentHandler(event) {
+    //     console.log(index)
+    //     event.preventDefault();
+    //     event.stopImmediatePropagation();
+    //     updateStudent = {
+    //         name: name.value,
+    //         email: email.value,
+    //         gpa: gpa.value,
+    //         age: age.value,
+    //         degree: degree.value
+    //     }
+    //     studentData[index] = updateStudent;
+    //     displayData();
+    //     closeUpdateBtn();
+    // }
+    // if(updateStudentHandler)
+    // {
+    //     updateStudentBtn.removeEventListener("click", updateStudentHandler);
+    // }
 
-    updateStudentBtn.removeEventListener("click", updateStudentHandler);
-    updateStudentBtn.addEventListener("click", updateStudentHandler);
+    // updateStudentBtn.addEventListener("click", updateStudentHandler);
+    
 }
 
 sortStudent.addEventListener("keyup", (event) =>{
